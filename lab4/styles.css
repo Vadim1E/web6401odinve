@@ -1,0 +1,316 @@
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+header {
+    background-color: #0073e6;
+    color: #fff;
+    padding: 15px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap:20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+main {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+main h2, main h3 {
+    text-align: center;
+    color: #0073e6;
+}
+
+main img {
+    display: block;
+    max-width: 100%;
+    margin: 20px auto;
+    border-radius: 8px;
+}
+
+footer {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 0.9em;
+    color: #666;
+}
+
+a {
+    color: #0073e6;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Таблица */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+thead {
+    background-color: #0073e6;
+    color: #fff;
+}
+
+thead th {
+    padding: 10px;
+    text-align: left;
+}
+
+tbody tr {
+    background-color: #f8f8f8;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #e0e0e0;
+}
+
+tbody td {
+    padding: 10px;
+    text-align: left;
+}
+
+tbody td:nth-child(1) {
+    text-align: left;
+}
+
+tbody td:nth-child(2) {
+    text-align: center;
+}
+
+tbody td:nth-child(3) {
+    text-align: right;
+}
+
+tbody td a {
+    color: #0073e6;
+}
+
+tbody td a:hover {
+    text-decoration: underline;
+}
+
+/* Flexbox для главной страницы */
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.welcome-section {
+    flex: 1;
+    padding: 20px;
+    min-width: 300px;
+}
+
+.image-container {
+    flex: 1;
+    padding: 20px;
+    min-width: 300px;
+}
+
+.explore-button {
+    background-color: #0073e6;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.explore-button:hover {
+    background-color: #0056b3;
+}
+
+/* Grid для страницы городов */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+/* Анимация */
+.explore-button {
+    position: relative;
+    overflow: hidden;
+}
+
+.explore-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.5s ease;
+}
+
+.explore-button:hover::before {left: 100%;
+}
+
+/* Стили для формы */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input, .form-group textarea {
+    width: calc(100% - 12px);
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-group textarea {
+    height: 150px;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: #0073e6;
+    box-shadow: 0 0 5px rgba(0, 115, 230, 0.5);
+}
+
+.error-message {
+    color: red;
+    font-size: 0.8em;
+    margin-top: 3px;
+    display: block;
+}
+
+form button {
+    background-color: #0073e6;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+
+/* Анимация загрузки страницы */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: opacity 1.0s ease;
+}
+
+.loading-spinner {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #0073e6;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading-overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+main img {
+    display: block;
+    max-width: 100%;
+    margin: 20px auto;
+    border-radius: 8px;
+    opacity: 0; /* Изначально делаем изображение прозрачным */
+    transform: scale(0.95); /* Изначально немного уменьшаем изображение */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Добавляем плавную анимацию */
+}
+
+main img.loaded {
+    opacity: 1; /* Делаем изображение полностью видимым */
+    transform: scale(1); /* Возвращаем изображение к исходному размеру */
+}
+
+/* Стили для сетки изображений */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Создаем 2 столбца */
+    gap: 10px; /* Расстояние между изображениями */
+    margin-top: 20px;
+}
+
+.image-grid img {
+    width: 100%; /* Изображения занимают всю ширину ячейки */
+    height: auto; /* Сохраняем пропорции изображения */
+    border-radius: 8px;
+    display: block;
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.image-grid img.loaded {
+    opacity: 1;
+    transform: scale(1);
+}
