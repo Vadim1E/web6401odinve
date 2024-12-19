@@ -1,0 +1,17 @@
+[
+    {
+      "name": "Лондон",
+      "country": "Великобритания",
+      "link": "london.html"
+    },
+      {
+      "name": "Париж",
+      "country": "Франция",
+      "link": "paris.html"
+    },
+      {
+      "name": "Токио",
+      "country": "Япония",
+      "link": "tokyo.html"
+    }
+  ]
